@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PhamTranVinhTuong_1911061079.Models.SinhVien>
+@{
+    ViewBag.Title = "ListSV";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table border="1">
+    <tr>
+        <th>Mã Sinh Viên </th>
+        <th>Họ Và Tên </th>
+        <th>Giới Tính </th>
+        <th>Ngày Sinh</th>
+        <th>Hình </th>
+        <th>Mã Ngành</th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaSV</td>
+            <td>@item.HoTen</td>
+            <td>@item.GioiTinh</td>
+            <td>@item.NgaySinh</td>
+            <td>
+                <img src="@item.Hinh" width="180" title="cover" />
+            </td>
+            <td>@item.MaNganh</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaSV }) |
+                @Html.ActionLink("Detail", "Detail", new { id = item.MaSV }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaSV })
+            </td>
+
+        </tr>
+    }
+</table>
+@Html.ActionLink("Create", "Create", "SV")
+
+
