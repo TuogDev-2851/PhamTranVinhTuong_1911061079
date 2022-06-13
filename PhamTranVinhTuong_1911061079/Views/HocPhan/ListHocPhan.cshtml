@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>listHocphan</h2>
+<h2>Danh Sách Học Phần</h2>
 
 <table border="1px">
     <tr>
@@ -23,7 +23,8 @@
             <td>@Html.DisplayFor(modelItem => item.SoTinChi)</td>
 
             <td>
-                @Html.ActionLink("DangKy", "DangKy", new { id = item.MaHP }) |
+                <a class="btn btn-success" href="/NguoiDung/Dangnhap">Đăng Ký</a>
+     @*           @Html.ActionLink("DangKy", "DangKy", new { id = item.MaHP }) |*@
 
             </td>
         </tr>
